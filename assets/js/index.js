@@ -10,9 +10,10 @@ fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey +
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        
     })
     
-fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=10&order=viewCount&q=Sandra%20Bullock&videoType=any&key=" + youTubeKey)
+fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=1&order=viewCount&q=Sandra%20Bullock&videoType=any&key=" + youTubeKey)
 .then(response => response.json())
 .then(data => {
     console.log(data);
