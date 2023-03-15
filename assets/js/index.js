@@ -6,6 +6,25 @@ const youTubeKey = "AIzaSyAIiJIzXXZuhC176V9ed3Vso1B3NU-CdQ8";
 
 
 
+
+fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBaseKey)
+    .then(response => response.json())
+    .then(trendingMovies => {
+        console.log(trendingMovies);
+
+        let movieTitle = "";
+        let posterLink = "";
+        
+        for (let i = 0; i < 6; i++) {
+            movieTitle = trendingMovies.results[i].title;
+            console.log(movieTitle);
+            posterLink = "https://image.tmdb.org/t/p/original/" + trendingMovies.results[i].poster_path;
+            console.log(posterLink);
+        }
+
+    })
+
+
 fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey + "&language=en-US&query=tom&page=1&include_adult=false")
     .then(response => response.json())
     .then(data => {
