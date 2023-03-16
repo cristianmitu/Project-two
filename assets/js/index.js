@@ -1,11 +1,8 @@
-// Movie database API key : https://www.themoviedb.org/  
 const movieDataBaseKey = "79a50b21902c8d9bd27a20543dc2f4c5";
 // You tube API key : https://console.cloud.google.com/apis/credentials?project=projectone-376623
 const youTubeKey = "AIzaSyAIiJIzXXZuhC176V9ed3Vso1B3NU-CdQ8";
 
-
-
-
+const submitButtonEl = document.querySelector("#submit")
 
 fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBaseKey)
     .then(response => response.json())
@@ -22,13 +19,29 @@ fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBas
             console.log(posterLink);
         }
 
-    })
+    });
+
+submitButtonEl.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("Button Click");
+})
 
 
-fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey + "&language=en-US&query=tom&page=1&include_adult=false")
+fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey + "&language=en-US&query=bruce%20willis&page=1&include_adult=false")
     .then(response => response.json())
     .then(data => {
         console.log(data);
+
+        // let actorName = "";
+        // let actorPicture = "";
+        // let knownFor1 = "";
+        // let knownFor2 = "";
+        // let knownFor3 = "";
+
+        // for (let i = 0; i < array.length; i++) {
+        //     const element = array[i];
+            
+        // }
         
     })
     
