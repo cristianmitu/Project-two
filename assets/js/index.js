@@ -21,12 +21,8 @@ fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBas
             posterLink = "https://image.tmdb.org/t/p/original/" + trendingMovies.results[i].poster_path;
             console.log(posterLink);
         }
-
     });
     
-
-
-
 submitButtonEl.addEventListener("click", function(event){
     event.preventDefault();
     console.log("Button Click");
@@ -52,6 +48,7 @@ submitButtonEl.addEventListener("click", function(event){
     
 })
 
+// THIS PART ISN'T WORKING 
 leaveReviewButtonEl.addEventListener("click", function(event){
     event.preventDefault();
     console.log("Button Click");
