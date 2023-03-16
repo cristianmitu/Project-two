@@ -7,9 +7,11 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 // import logo from './logo.svg';
 import './App.css';
+// import SearchBar from './components/searchbar';
 
 function App() {
   return (
+
     <Router>
       <Navbar />
         <Routes>
@@ -19,6 +21,16 @@ function App() {
           
       </Routes>
     </Router>
+
+    <div className="App">
+      {/* <SearchBar></SearchBar> */}
+      <h2>MOVIE TITLE</h2>
+      <img src="www.getlinkfromapiconnection.com" alt="example"></img>
+
+     <h1> Test </h1>
+
+    </div>
+
   );
 }
 
