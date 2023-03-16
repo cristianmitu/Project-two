@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Pupster
+        Actor Search
       </Link>
       <div>
         <ul className="navbar-nav">
@@ -22,26 +22,7 @@ function Navbar() {
               About
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              to="/discover"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
-            >
-              Discover
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/search"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
-            >
-              Search
-            </NavLink>
-          </li>
+          
         </ul>
       </div>
     </nav>

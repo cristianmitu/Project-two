@@ -4,7 +4,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Pupster 2017</span>
+      <span>Actor Search 2023</span>
     </footer>
   );
 }
