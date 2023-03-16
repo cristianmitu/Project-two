@@ -4,6 +4,8 @@ const youTubeKey = "AIzaSyAIiJIzXXZuhC176V9ed3Vso1B3NU-CdQ8";
 
 const submitButtonEl = document.querySelector("#submit");
 const leaveReviewButtonEl = document.querySelector("#review");
+const searchTermEl = document.querySelector("#name");
+
 
 fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBaseKey)
     .then(response => response.json())
@@ -28,6 +30,25 @@ fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBas
 submitButtonEl.addEventListener("click", function(event){
     event.preventDefault();
     console.log("Button Click");
+    let searchTerm = searchTermEl.value;
+    console.log(searchTerm);
+    fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey + "&language=en-US&query=" + searchTerm + "&page=1&include_adult=false")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        // let actorName = "";
+        // let actorPicture = "";
+        // let knownFor1 = "";
+        // let knownFor2 = "";
+        // let knownFor3 = "";
+
+        // for (let i = 0; i < array.length; i++) {
+        //     const element = array[i];
+            
+        // }
+        
+    })
     
 })
 
@@ -45,25 +66,6 @@ leaveReviewButtonEl.addEventListener("click", function(event){
     })
     
 })
-
-
-fetch("https://api.themoviedb.org/3/search/person?api_key=" + movieDataBaseKey + "&language=en-US&query=bruce%20willis&page=1&include_adult=false")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-
-        // let actorName = "";
-        // let actorPicture = "";
-        // let knownFor1 = "";
-        // let knownFor2 = "";
-        // let knownFor3 = "";
-
-        // for (let i = 0; i < array.length; i++) {
-        //     const element = array[i];
-            
-        // }
-        
-    })
     
 fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=1&order=viewCount&q=Sandra%20Bullock&videoType=any&key=" + youTubeKey)
 .then(response => response.json())
