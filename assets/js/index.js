@@ -2,7 +2,8 @@ const movieDataBaseKey = "79a50b21902c8d9bd27a20543dc2f4c5";
 // You tube API key : https://console.cloud.google.com/apis/credentials?project=projectone-376623
 const youTubeKey = "AIzaSyAIiJIzXXZuhC176V9ed3Vso1B3NU-CdQ8";
 
-const submitButtonEl = document.querySelector("#submit")
+const submitButtonEl = document.querySelector("#submit");
+const leaveReviewButtonEl = document.querySelector("#review");
 
 fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBaseKey)
     .then(response => response.json())
@@ -20,10 +21,29 @@ fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBas
         }
 
     });
+    
+
+
 
 submitButtonEl.addEventListener("click", function(event){
     event.preventDefault();
     console.log("Button Click");
+    
+})
+
+leaveReviewButtonEl.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("Button Click");
+    fetch("https://api.themoviedb.org/3/authentication/token/new?api_key=" + movieDataBaseKey)
+    .then(response => response.json())
+    .then(newToken => {
+        let requestToken = newToken.request_token
+        console.log(requestToken);
+        window.location.href = "https://www.themoviedb.org/authenticate/" + requestToken + "?redirect_to=C:/Users/barry/Projects/Project-two/index.html";
+        
+        
+    })
+    
 })
 
 
