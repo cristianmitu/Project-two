@@ -52,20 +52,32 @@ submitButtonEl.addEventListener("click", function(event){
 leaveReviewButtonEl.addEventListener("click", function(event){
     event.preventDefault();
     console.log("Button Click");
-    fetch("https://api.themoviedb.org/3/authentication/token/new?api_key=" + movieDataBaseKey)
+    fetch("https://api.themoviedb.org/3/authentication/guest_session/new?api_key=" + movieDataBaseKey)
     .then(response => response.json())
-    .then(newToken => {
-        let requestToken = newToken.request_token
-        console.log(requestToken);
-        window.location.href = "https://www.themoviedb.org/authenticate/" + requestToken + "?redirect_to=C:/Users/barry/Projects/Project-two/index.html";
+    .then(guestSession => {
+        console.log(guestSession.guest_session_id);
+        let guestSessionId = guestSession.guest_session_id;
+        fetch("https://api.themoviedb.org/3/movie/745/rating?api_key=" + movieDataBaseKey + "&guest_session_id=" + guestSessionId, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "value": 8.5
+            }),
+        })
+        .then(response => response.json())
+        .then(newData => {
+        console.log(newData);     
         
         
     })
+})
     
 })
     
-fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=1&order=viewCount&q=Sandra%20Bullock&videoType=any&key=" + youTubeKey)
-.then(response => response.json())
-.then(data => {
-    console.log(data);
-})
+// fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=1&order=viewCount&q=Sandra%20Bullock&videoType=any&key=" + youTubeKey)
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data);
+// });
