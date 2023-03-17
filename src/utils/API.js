@@ -14,3 +14,5 @@ function TrendingMovies() {
 }
 
 export default TrendingMovies
+import axios from "axios";
+
