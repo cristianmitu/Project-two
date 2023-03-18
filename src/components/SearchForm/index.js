@@ -1,15 +1,20 @@
-import React from "react";
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
-function SearchForm(props) {
-    return (
-      <form>
-        <input type="text" id="name" name="name"></input>
-        <input type="submit" id="submit" value="submit"></input>
-        
-      </form>
-      
-    );
-  }
-  
-  export default SearchForm;
+function SearchForm() {
+  return (
+    <>
+      <InputGroup size="lg">
+        <Form.Control
+          aria-label="Large"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
+      <Button variant="primary">Search</Button>{' '}
+
+    </>
+  );
+}
+
+export default SearchForm;

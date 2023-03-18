@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import MovieCard from "../MovieCard";
 import "./style.css";
 
 function TrendingData() {
@@ -15,12 +16,16 @@ function TrendingData() {
 
 
 function Trending() {
-    
-    
     return (
         <div>
             <h2>Trending Movies</h2>
             {TrendingData()}
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
         </div>
     )
 }
