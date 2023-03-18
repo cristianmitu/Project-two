@@ -17,8 +17,8 @@ function TrendingData() {
 
 function Trending() {
     return (
-        <div>
-            <h2>Trending Movies</h2>
+        <div className="container-fluid row" id="trendingContainer">
+            <h2 style={{display:'flex',alignItems:'center',justifyContent:'center'}}>Trending Movies</h2>
             {TrendingData()}
             <MovieCard />
             <MovieCard />
