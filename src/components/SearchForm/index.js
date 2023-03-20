@@ -43,7 +43,7 @@ export default function SearchForm(props) {
 
 
 
-//function SearchForm() {  
+ // function SearchForm() {  
   //return (
     //<div className="container" id="searchForm">
       //<h2>Search for your favourite actor</h2>
@@ -57,7 +57,7 @@ export default function SearchForm(props) {
 
     //</div>
   //);
-//}
+//</InputGroup>}
 
 //export default SearchForm;
 
