@@ -43,7 +43,7 @@ export default function SearchForm(props) {
 
 
 
-//function SearchForm() {  
+ // function SearchForm() {  
   //return (
     //<div className="container" id="searchForm">
       //<h2>Search for your favourite actor</h2>
@@ -57,7 +57,7 @@ export default function SearchForm(props) {
 
     //</div>
   //);
-//}
+//</InputGroup>}
 
 //export default SearchForm;
 
@@ -92,19 +92,11 @@ function SearchForm(props) {
     <div className="container" id="searchForm">
       <h2>Search for your favourite actor</h2>
       <InputGroup size="lg">
-
         <Form.Control
-          
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
         />
       </InputGroup>
-
-      <Button variant="primary" type="submit">Search</Button>{' '}
-
-    </>
-    </form>
-
       <Button variant="primary" id="searchFormBtn">Search</Button>{' '}
 
     </div>
