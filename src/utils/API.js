@@ -7,11 +7,22 @@ function TrendingMovies() {
     return (
         axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=" + movieDataBaseKey)
         .then(function (response) {
-          // handle success
-          console.log(response);
+
+
+            console.log(response);
         })
+        
     )
-}
+
+
+} 
 
 export default TrendingMovies
+  
+      
+
+
+
+
+
 
