@@ -1,16 +1,18 @@
 import React from "react";
-import "./style.css";
+import {useLocation} from 'react-router-dom';
 
-function SearchResults(props) {
-  return (
-    <ul className="list-group search-results">
-      {props.results.map(result => (
-        <li key={result} className="list-group-item">
-          <img alt="Actor" src={result} className="img-fluid" />
-        </li>
-      ))}
-    </ul>
-  );
-}
+ function ComponentB() {
 
-export default SearchResults;
+    const location = useLocation();
+   
+        return (
+
+            <>
+               
+<div>{location.state.name}</div>
+
+            </>
+        )
+    }
+
+export default ComponentB;

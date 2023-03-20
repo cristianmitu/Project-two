@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import SearchForm from "./../components/SearchForm"
 
 
 function Home() {
+
     return (
         <div>
             {/* <h2>Search for your favourite actor</h2> */}
