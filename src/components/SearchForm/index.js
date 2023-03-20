@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import {Link, useNavigate} from 'react-router-dom';
 
-function SearchForm() {
+export default function SearchForm(props) {
   
+  const navigate = useNavigate();
+
   const [state, setState] = useState("")
 
   const handleInputChange = (event) => {
@@ -14,7 +17,11 @@ function SearchForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // window.location.href = "http://localhost:3000/results"
     console.log(state);
+    // props.actor = state;
+    navigate('./../../results',{state:state});
+
   };
   
   return (
@@ -39,4 +46,3 @@ function SearchForm() {
   );
 }
 
-export default SearchForm;
