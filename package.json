@@ -1,6 +1,6 @@
 {
   "name": "project-two",
-  "version": "0.1.0",
+  "version": "5.0.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,7 +15,7 @@
     "react-native-input-search-bar": "^0.0.8",
     "react-native-svg": "^13.6.0",
     "react-router-dom": "^6.9.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
