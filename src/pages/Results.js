@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResults from "../components/SearchResults";
+import ActorSearch from "../components/ActorSearch";
 
 
 function Results() {
@@ -8,7 +8,7 @@ function Results() {
   return (
     <div>
       <h2>{}Results</h2>
-      <SearchResults />
+      <ActorSearch />
     </div>
   )
 }
