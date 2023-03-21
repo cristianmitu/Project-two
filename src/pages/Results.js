@@ -1,18 +1,14 @@
 import React from "react";
-import SearchForm from "./../components/SearchForm"
-import {useLocation} from 'react-router-dom';
-
+import SearchResults from "../components/SearchResults";
 
 
 function Results() {
   
-  const location = useLocation();
 
   return (
     <div>
       <h2>{}Results</h2>
-      <div>{location.state}</div>
-
+      <SearchResults />
     </div>
   )
 }
