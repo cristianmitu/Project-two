@@ -23,6 +23,8 @@ function ActorSearch() {
       
       })}, [searchTerm]);
 
+      /* adult, gender, id, known_for, known_for_department, name, original_name, popularity, profile_path
+*/
 
       return ( 
             <>
