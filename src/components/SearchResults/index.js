@@ -49,6 +49,5 @@ function SearchResults() {
 
 export default SearchResults;
 
-export default ComponentB;
 
 
