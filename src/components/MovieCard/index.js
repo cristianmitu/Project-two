@@ -1,4 +1,4 @@
-import { Modal } from 'bootstrap';
+// import { Modal } from 'bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 

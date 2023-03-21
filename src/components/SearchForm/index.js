@@ -19,9 +19,7 @@ export default function SearchForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
     console.log(state);
-    // props.actor = state;
     navigate('./../../results',{state:state});
 
   };
@@ -31,8 +29,31 @@ export default function SearchForm(props) {
       <div className="container" id="searchForm">
         <h2>Search for your favourite actor</h2>
         <form onSubmit={handleSubmit}>
+
         <> 
          <InputGroup size="lg"
+
+        <>
+          <InputGroup size="lg"
+            type="text"
+            name="actorSearch"
+            value={state}
+            onChange={handleInputChange}
+          >
+            <Form.Control
+              aria-label="Large"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </InputGroup>
+          <Button variant="primary" type="submit" id="searchFormBtn">Search</Button>{' '}
+          </>
+        </form>
+      </div>
+    </div>
+    <form onSubmit={handleSubmit}>
+    <>
+      <InputGroup size="lg"
+
           type="text"
           name="actorSearch"
           value={state}
