@@ -1,0 +1,10 @@
+#MovieCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#RateMovieCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
