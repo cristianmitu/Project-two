@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useLocation} from 'react-router-dom';
 import ActorCard from "../ActorCard";
+import ActorMovieCard from "../ActorMovieCard";
 import { useState, useEffect } from "react"
 
 function ActorSearch() {
@@ -23,10 +24,15 @@ function ActorSearch() {
 
       /* adult, gender, id, known_for, known_for_department, name, original_name, popularity, profile_path
 */
+      let actorMovies = [];
+      let currentActorMovies = "";
+
       for (let i = 0; i < actors.length; i++) {
-        console.log(actors[i].name)
-        
+        currentActorMovies = actors[i].known_for
+        actorMovies.push(...currentActorMovies)
       }
+      console.log(actorMovies);
+
 
       return ( 
             <>
@@ -38,7 +44,15 @@ function ActorSearch() {
                             value={i}
                         /> 
                     ))}
-                {console.log(actors)}
+                {actorMovies.map((film, i) => (
+                    <ActorMovieCard
+                        key={film.id}
+                        title={film.title}
+                        poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
+                        value={i}
+                    /> 
+                ))}
+                
             </>
         )
 
