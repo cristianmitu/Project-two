@@ -1,7 +1,6 @@
 
 import React, { useState} from "react"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ActorCard from "../components/ActorCard";
@@ -20,15 +19,12 @@ function Rate() {
 
     return (
 
-        <div>
-            <h2>{searchTerm}</h2>
-            <h3>Test</h3>
-        </div>
+       
     <div className="container" id="RateMovieCard">
-        
-        <MovieCard/>
-        
-    </div>       
+        <h2>{searchTerm}</h2>
+        <h3>Test</h3>
+        <MovieCard/>        
+     </div>       
 
     )
 };
