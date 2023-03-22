@@ -28,16 +28,14 @@ function ActorSearch() {
 
       /* adult, gender, id, known_for, known_for_department, name, original_name, popularity, profile_path
 */
+
       let actorMovies = [];
       let currentActorMovies = "";
 
       for (let i = 0; i < actors.length; i++) {
         currentActorMovies = actors[i].known_for
-        actorMovies.push(...currentActorMovies)
-      }
+        actorMovies.push(...currentActorMovies)      }
       console.log(actorMovies);
-
-
       return ( 
             <>
                 {actors.map((actor, i) => (
