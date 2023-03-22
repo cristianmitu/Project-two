@@ -4,12 +4,15 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import "./style.css";
 import {Link, useNavigate} from 'react-router-dom';
+
 export default function SearchForm(props) {
-  const navigate = useNavigate();
-  const [state, setState] = useState("")
-  const handleInputChange = (event) => {
-    const { value } = event.target;
-    setState(() => (value));
+
+const navigate = useNavigate();
+const [state, setState] = useState("")
+
+const handleInputChange = (event) => {
+const { value } = event.target;
+setState(() => (value));
   };
   const handleSubmit = (event) => {
     event.preventDefault();
