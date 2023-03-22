@@ -1,6 +1,6 @@
 import React, { useState} from "react"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-
+import Rating from "./../components/SubmitRating"
 
 
 function Rate() {
@@ -13,6 +13,7 @@ function Rate() {
         <div>
             <h2>{searchTerm}</h2>
             <h3>Test</h3>
+            <Rating id={searchTerm}/>
         </div>
     )
 }
