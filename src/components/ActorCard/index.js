@@ -1,6 +1,7 @@
 // import { Modal } from 'bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './style.css';
 import { useState } from "react"
 import ActorMovieCard from '../ActorMovieCard';
 
@@ -13,9 +14,9 @@ function ActorCard(props) {
   // console.log(MovieCard.props);
 
   return (
-    <div>
-    <Card style={{ width: '18rem' ,margin:'5px',display:'flex',padding:'5px'}}>
-      <Card.Title style={{display:'flex',justifyContent:'center'}}>{props.name}</Card.Title>
+    <div className='col-lg-4 col-md-4 col-sm-12 movieCards'>
+    <Card style={{ width: '18rem' ,margin:'5px',padding:'5px',display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <Card.Title style={{display:'flex',alignItems:'center',justifyContent:'center'}}>{props.name}</Card.Title>
       <Card.Img variant="top" src={props.profile_path} style={{display:'flex',justifyContent:'center'}} />
       <Card.Body style={{display:'flex',flexDirection:'column'}}>
         <Button id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>Show Movies</Button>

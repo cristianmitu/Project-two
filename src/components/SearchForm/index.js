@@ -21,11 +21,11 @@ setState(() => (value));
   };
   return (
     <div>
-      <div className="container" id="searchForm">
+      <div className="row" id="searchForm">
         <h2>Search for your favourite actor</h2>
         <form onSubmit={handleSubmit}>
         <>
-          <InputGroup size="lg"
+          <InputGroup className="col-sm-12 col-md-2 col-lg-4 container-fluid" size="lg"
             type="text"
             name="actorSearch"
             value={state}
