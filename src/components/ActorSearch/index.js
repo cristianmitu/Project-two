@@ -1,10 +1,15 @@
 import axios from "axios";
 import {useLocation} from 'react-router-dom';
-import MovieCard from "../MovieCard";
-import { useState, useEffect } from "react"
+import ActorCard from "../ActorCard";
+import ActorMovieCard from "../ActorMovieCard";
+import React, { useState, useEffect } from "react"
 
 function ActorSearch() {
     
+    
+    // console.log(MovieCard.props);
+
+
     const [actors, setActors] = useState([])
 
     const location = useLocation();
@@ -16,25 +21,41 @@ function ActorSearch() {
         .then(function (response) {
             
             let actors = response.data.results;
-            console.log(actors);
-
             setActors(actors) 
-
+            console.log(actors.length)
       
       })}, [searchTerm]);
 
       /* adult, gender, id, known_for, known_for_department, name, original_name, popularity, profile_path
 */
 
+      let actorMovies = [];
+      let currentActorMovies = "";
+
+      for (let i = 0; i < actors.length; i++) {
+        currentActorMovies = actors[i].known_for
+        actorMovies.push(...currentActorMovies)      }
+      console.log(actorMovies);
       return ( 
             <>
-                {actors.map(actor => (
-                        <MovieCard
+                {actors.map((actor, i) => (
+                        <ActorCard
                             key={actor.id}
                             name={actor.name}
+                            profile_path={"https://image.tmdb.org/t/p/w200" + actor.profile_path}
+                            value={i}
                         /> 
                     ))}
-                {console.log(actors)}
+                {actorMovies.map((film, i) => (
+                    <ActorMovieCard
+                        key={film.id}
+                        id={film.id}
+                        title={film.title}
+                        poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
+                        value={i}
+                    /> 
+                ))}
+                
             </>
         )
 
