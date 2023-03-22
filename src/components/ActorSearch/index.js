@@ -37,7 +37,7 @@ function ActorSearch() {
         actorMovies.push(...currentActorMovies)      }
       console.log(actorMovies);
       return ( 
-            <>
+            <div className="row" id="ActorSearch">
                 {actors.map((actor, i) => (
                         <ActorCard
                             key={actor.id}
@@ -56,7 +56,7 @@ function ActorSearch() {
                     /> 
                 ))}
                 
-            </>
+            </div>
         )
 
     }
