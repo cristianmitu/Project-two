@@ -1,6 +1,5 @@
-#trendingContainer{
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
-    margin: 10px;
+#TrendingContainer{
+display: flex !important;
+align-items: center;
+justify-content: space-evenly;
 }

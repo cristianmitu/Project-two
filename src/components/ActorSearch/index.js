@@ -37,7 +37,7 @@ function ActorSearch() {
         actorMovies.push(...currentActorMovies)      }
       console.log(actorMovies);
       return ( 
-            <>
+            <div className="row" id="ActorSearch">
                 {actors.map((actor, i) => (
                         <ActorCard
                             key={actor.id}
@@ -52,11 +52,11 @@ function ActorSearch() {
                         id={film.id}
                         title={film.title}
                         poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
-                        value={i}
+                        value={film.id}
                     /> 
                 ))}
                 
-            </>
+            </div>
         )
 
     }
