@@ -33,9 +33,22 @@ function ActorSearch() {
       let currentActorMovies = "";
 
       for (let i = 0; i < actors.length; i++) {
-        currentActorMovies = actors[i].known_for
-        actorMovies.push(...currentActorMovies)      }
+         currentActorMovies = actors[i].known_for
+         actorMovies.push(...currentActorMovies)      
+      }
+
+      for (let i = 0; i < actorMovies.length; i++) {
+        if (actorMovies[i].poster_path === null) {
+            actorMovies[i].poster_path = "./../../public/No-Image-Placeholder.png"
+        } else {
+            actorMovies[i].poster_path = "https://image.tmdb.org/t/p/w200" + actorMovies[i].poster_path
+        }
+        
+      }
+    //   /oAVu0X95TEvWuqnnYuk0D7ojy1H.jpg
+
       console.log(actorMovies);
+
       return ( 
             <div className="row" id="ActorSearch">
                 {actors.map((actor, i) => (
@@ -51,7 +64,7 @@ function ActorSearch() {
                         key={film.id}
                         id={film.id}
                         title={film.title}
-                        poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
+                        poster_path={film.poster_path}
                         value={film.id}
                     /> 
                 ))}
