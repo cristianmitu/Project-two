@@ -20,19 +20,22 @@ function ActorMovieCard(props) {
         const value = event.target.id;
         console.log(value);
         setMovieId(value);
-        console.log(movieId);
+        console.log(movieId)
         navigate('./../../rate',{state:movieId});
     };
 
 
   return (
+    
+    
     <Card id={props.id} style={{ width: '18rem' ,margin:'5px',display:'flex',padding:'5px'}}>
       <Card.Title style={{display:'flex',justifyContent:'center'}}>{props.title}</Card.Title>
       <Card.Img variant="top" src={props.poster_path} style={{display:'flex',justifyContent:'center'}} />
       <Card.Body style={{display:'flex',flexDirection:'column'}}>
-        <Button onClick={handleClick} id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>Movie Info</Button>
+        <Button onClick={handleClick} id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>{movieId}Movie Info</Button>
       </Card.Body>
     </Card>
+      
 
   );
 }
