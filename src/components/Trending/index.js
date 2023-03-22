@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "../MovieCard";
-import "./style.css";
+// import "./style.css";
 
 const movieDataBaseKey = "79a50b21902c8d9bd27a20543dc2f4c5";
 function TrendingData() {
@@ -22,7 +22,7 @@ function Trending() {
     return (
         <div className="container-fluid row" id="TrendingContainer">
             <h2 style={{display:'flex',alignItems:'center',justifyContent:'center'}}>Trending Movies</h2>
-            {TrendingData()}
+            {/* {TrendingData()} */}
             <MovieCard />
             <MovieCard />
             <MovieCard />

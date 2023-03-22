@@ -34,23 +34,3 @@ function SearchResults() {
     )}
 
 export default SearchResults;
-
-<<<<<<< HEAD
-{/* {actors.map(actor => (
-                        <MovieCard
-                            key={actor.id}
-                            name={actor.name}
-                        /> 
-                    ))} */}
-
-
-// const Actors = async () => {
-        
-    //       const {data:response} = await axios.get("") //use data destructuring to get data from the promise object
-          
-    //     }
-=======
-export default ComponentB;
-
-
->>>>>>> d639056c88d636e860b9500184c915d6f3055c49
