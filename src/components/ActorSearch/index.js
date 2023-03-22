@@ -2,10 +2,14 @@ import axios from "axios";
 import {useLocation} from 'react-router-dom';
 import ActorCard from "../ActorCard";
 import ActorMovieCard from "../ActorMovieCard";
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
 function ActorSearch() {
     
+    
+    // console.log(MovieCard.props);
+
+
     const [actors, setActors] = useState([])
 
     const location = useLocation();
@@ -47,6 +51,7 @@ function ActorSearch() {
                 {actorMovies.map((film, i) => (
                     <ActorMovieCard
                         key={film.id}
+                        id={film.id}
                         title={film.title}
                         poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
                         value={i}
