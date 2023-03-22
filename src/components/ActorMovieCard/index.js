@@ -8,22 +8,16 @@ import Card from 'react-bootstrap/Card';
 function ActorMovieCard(props) {
   
     const navigate = useNavigate();
-    const [movieId, setMovieId] = useState(0)
+    const [movieId, _setMovieId] = React.useState(0)
     
-    // const handleInputChange = (event) => {
-        
-    // };
+    const myStateRef = React.useRef(movieId);
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        // this.reply_click(event.target.id)
-        const value = event.target.id;
-        console.log(value);
-        setMovieId(value);
-        console.log(movieId)
-        navigate('./../../rate',{state:movieId});
+    const setMovieId = data => {
+      myStateRef.current = data;
+      _setMovieId(data);
+      console.log(`state in handler: ${myStateRef.current}`);
+      navigate('./../../rate',{state:myStateRef.current});
     };
-
 
   return (
     
@@ -32,7 +26,7 @@ function ActorMovieCard(props) {
       <Card.Title style={{display:'flex',justifyContent:'center'}}>{props.title}</Card.Title>
       <Card.Img variant="top" src={props.poster_path} style={{display:'flex',justifyContent:'center'}} />
       <Card.Body style={{display:'flex',flexDirection:'column'}}>
-        <Button onClick={handleClick} id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>{movieId}Movie Info</Button>
+        <Button onClick={() => setMovieId(props.value)} id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>Movie Info</Button>
       </Card.Body>
     </Card>
       
