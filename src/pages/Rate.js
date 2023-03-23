@@ -19,6 +19,7 @@ function Rate() {
     console.log(searchTerm);
 
     return (
+
         <div>
         <div>
             <h2>{searchTerm}</h2>
@@ -31,6 +32,16 @@ function Rate() {
         
         </div>       
         </div>
+
+
+       
+    <div className="container" id="RateMovieCard">
+        <h2>{searchTerm}</h2>
+        <h3>Test</h3>
+        <MovieCard/>        
+     </div>       
+
+
     )
 };
 

@@ -5,7 +5,7 @@ import Trending from "./../components/Trending"
 function Home() {
 
     return (
-        <div>
+        <div className="container" id="HomePage">
             {/* <h2>Search for your favourite actor</h2> */}
             <SearchForm />
             <Trending />
