@@ -5,6 +5,7 @@ import ActorMovieCard from "../ActorMovieCard";
 import React, { useState, useEffect } from "react"
 import SearchForm from "./../SearchForm"
 
+
 function ActorSearch() {
     
     
@@ -39,10 +40,13 @@ function ActorSearch() {
       }
 
       for (let i = 0; i < actorMovies.length; i++) {
-        if (actorMovies[i].poster_path !== null) {
+        if (actorMovies[i].poster_path !== null && typeof actorMovies[i].poster_path != "object" ) {
             actorMovies[i].poster_path = "https://image.tmdb.org/t/p/w200" + actorMovies[i].poster_path
+            console.log(actorMovies[i].poster_path);
         } else {
-            actorMovies[i].poster_path = "./../../public/No-Image-Placeholder.png"
+      
+            actorMovies[i].poster_path = "notFound"
+            
         }
       }
 
