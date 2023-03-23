@@ -24,7 +24,7 @@ function Rate() {
         <h2>{searchTerm}</h2>
         <h3>Test</h3>
         <MovieCard/>        
-     </div>       
+    </div>       
 
 
     )
