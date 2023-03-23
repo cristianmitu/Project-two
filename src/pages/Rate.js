@@ -1,4 +1,3 @@
-
 import React, { useState} from "react"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -34,7 +33,3 @@ function Rate() {
     )
 };
 export default Rate;
-
-
-
-
