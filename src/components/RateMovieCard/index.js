@@ -1,6 +1,7 @@
 // import { Modal } from 'bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './style.css';
 
 function RateMovieCard(props) {
   
@@ -8,13 +9,12 @@ function RateMovieCard(props) {
 
   return (
   
-    <Card style={{ width: '18rem' ,margin:'5px',padding:'5px'}}>
-      <Card.Title style={{display:'flex',justifyContent:'center'}}>{props.name}</Card.Title>
-      <Card.Img variant="top" src="holder.js/100px180" style={{display:'flex',justifyContent:'center'}} />
+    <Card id="RateMovieCard" style={{ width: '18rem', margin:'5px', padding:'5px'}}>
+      <Card.Title style={{display:'flex',justifyContent:'center'}}>{props.title}</Card.Title>
+      <Card.Img variant="top" src={props.poster_path} style={{display:'flex',justifyContent:'center'}} />
       <Card.Body style={{display:'flex',flexDirection:'column'}}>
         {/* <Card.Title style={{display:'flex',justifyContent:'center'}}>Movie Name</Card.Title> */}
-        <Button variant="primary" style={{margin:'1px',padding:'1px'}}>Rate Movie</Button>
-        <Button variant="primary" style={{margin:'1px',padding:'1px'}}>Watch trailer</Button>        
+                {props.overview}
       </Card.Body>
     </Card>
     
