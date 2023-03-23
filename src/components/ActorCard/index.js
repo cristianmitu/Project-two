@@ -5,6 +5,7 @@ import './style.css';
 // import {useNavigate} from 'react-router-dom';
 import React, { useState } from "react"
 import ActorMovieCard from '../ActorMovieCard';
+import MovieCard from '../MovieCard';
 
 function ActorCard(props) {
   
