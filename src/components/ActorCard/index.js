@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import './style.css';
 import { useState } from "react"
 import ActorMovieCard from '../ActorMovieCard';
+import MovieCard from '../MovieCard';
 
 function ActorCard(props) {
   
