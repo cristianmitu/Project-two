@@ -18,23 +18,8 @@ function Rate() {
     const searchTerm = location.state
     console.log(searchTerm);
 
-    return (
-
-        <div>
-        <div>
-            <h2>{searchTerm}</h2>
-            <h3>Test</h3>
-            <Rating id={searchTerm}/>
-        </div>
-        <div className="container" id="RateMovieCard">
-        
-        <MovieCard/>
-        
-        </div>       
-        </div>
-
-
-       
+    return (     
+         
     <div className="container" id="RateMovieCard">
         <h2>{searchTerm}</h2>
         <h3>Test</h3>
