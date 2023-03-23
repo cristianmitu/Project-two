@@ -4,6 +4,7 @@ import ActorCard from "../ActorCard";
 import ActorMovieCard from "../ActorMovieCard";
 import React, { useState, useEffect } from "react"
 import SearchForm from "./../SearchForm"
+import placeholder from "./../../No-Image-Placeholder.png";
 
 
 function ActorSearch() {
@@ -31,12 +32,19 @@ function ActorSearch() {
       let actorMovies = [];
       let currentActorMovies = "";
 
-      for (let i = 0; i < actors.length; i++) {
-              
+      for (let i = 0; i < actors.length; i++) {      
         currentActorMovies = actors[i].known_for
-         actorMovies.push(...currentActorMovies)    
-         console.log(actorMovies);  
+        actorMovies.push(...currentActorMovies)    
+        console.log(actorMovies);  
          
+      }
+
+      for (let i = 0; i < actors.length; i++) { 
+        if(actors.profile_path !== null && typeof actorMovies[i].poster_path != "object" ) {
+            actors[i].profile_path = "https://image.tmdb.org/t/p/w200" + actors[i].profile_path
+        } else {
+            actors[i].profile_path = "notFound"
+        }
       }
 
       for (let i = 0; i < actorMovies.length; i++) {
@@ -44,9 +52,7 @@ function ActorSearch() {
             actorMovies[i].poster_path = "https://image.tmdb.org/t/p/w200" + actorMovies[i].poster_path
             console.log(actorMovies[i].poster_path);
         } else {
-      
             actorMovies[i].poster_path = "notFound"
-            
         }
       }
 
@@ -60,7 +66,7 @@ function ActorSearch() {
                         <ActorCard
                             key={actor.id}
                             name={actor.name}
-                            profile_path={"https://image.tmdb.org/t/p/w200" + actor.profile_path}
+                            profile_path={actor.profile_path}
                             value={i}
                         /> 
                     ))}
