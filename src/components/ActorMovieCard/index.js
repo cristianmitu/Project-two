@@ -38,6 +38,7 @@ function ActorMovieCard(props) {
       </Card.Body>
     </Card>
     </div>
+    </div>
 
   );
 }

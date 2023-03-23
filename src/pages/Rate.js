@@ -35,11 +35,11 @@ function Rate() {
 
 
        
-    <div className="container" id="RateMovieCard">
-        <h2>{searchTerm}</h2>
-        <h3>Test</h3>
-        <MovieCard/>        
-     </div>       
+    // <div className="container" id="RateMovieCard">
+    //     <h2>{searchTerm}</h2>
+    //     <h3>Test</h3>
+    //     <MovieCard/>        
+    //  </div>       
 
 
     )
