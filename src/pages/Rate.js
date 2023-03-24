@@ -1,7 +1,4 @@
-
-import React, { useState} from "react"
-import axios from "axios";
-import React, { useState, useEffect} from "react"
+import React, { useState} from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -16,33 +13,24 @@ import Rating from "./../components/SubmitRating"
 
 function Rate() {
     const location = useLocation();
-    const movieIdForApi = location.state
-    console.log(movieIdForApi);
-
-    const movieDataBaseKey = "79a50b21902c8d9bd27a20543dc2f4c5";
-
-    const [movie, setMovie] = useState([])
-
-    useEffect(() => { 
-        axios.get("https://api.themoviedb.org/3/movie/" + movieIdForApi + "?api_key=" + movieDataBaseKey + "&language=en-US")
-        .then(function (response) {
-              let movieData = response.data;
-              setMovie(movieData) 
-        
-        })}, [movieIdForApi]);
-
+    const searchTerm = location.state
+    console.log(searchTerm);
     return (
         <div>
-
         <div>
-        <RateMovieCard title={movie.title} poster_path={"https://image.tmdb.org/t/p/w200" + movie.poster_path} overview={movie.overview}/>
-            
-            <Rating id={movieIdForApi}/>
+        <RateMovieCard />
+            <h2>{searchTerm}</h2>
+            <h3>Test</h3>
+            <Rating id={searchTerm}/>
         </div>
         <div className="container" id="RateMovieCard">
         </div>
         </div>
+    // <div className="container" id="RateMovieCard">
+    //     <h2>{searchTerm}</h2>
+    //     <h3>Test</h3>
+    //     <MovieCard/>
+    //  </div>
     )
-    
 };
 export default Rate;
