@@ -32,7 +32,7 @@ function ActorCard(props) {
     <div className='col-lg-4 col-md-4 col-sm-12 movieCards'>
     <Card style={{ width: '18rem' ,margin:'5px',padding:'5px',display:'flex',alignItems:'center',justifyContent:'center'}}>
       <Card.Title style={{display:'flex',alignItems:'center',justifyContent:'center'}}>{props.name}</Card.Title>
-      <Card.Img variant="top" src={props.profile_path == "https://image.tmdb.org/t/p/w200https://image.tmdb.org/t/p/w200null" ? placeholder: props.profile_path} style={{display:'flex',justifyContent:'center'}} />
+      <Card.Img variant="top" src={props.profile_path == "https://image.tmdb.org/t/p/w200null" ? placeholder: props.profile_path} style={{display:'flex',justifyContent:'center'}} />
       <Card.Body style={{display:'flex',flexDirection:'column'}}>
         <Button onClick={() => setActorId(props.value)} id={props.value} variant="primary" style={{margin:'1px',padding:'1px'}}>Show Movies</Button>
       </Card.Body>
