@@ -3,6 +3,9 @@ import {useLocation} from 'react-router-dom';
 import ActorCard from "../ActorCard";
 import ActorMovieCard from "../ActorMovieCard";
 import React, { useState, useEffect } from "react"
+import SearchForm from "./../SearchForm"
+import placeholder from "./../../No-Image-Placeholder.png";
+
 
 function ActorSearch() {
     
@@ -22,36 +25,60 @@ function ActorSearch() {
             
             let actors = response.data.results;
             setActors(actors) 
-            console.log(actors.length)
+            console.log(actors)
       
       })}, [searchTerm]);
-
-      /* adult, gender, id, known_for, known_for_department, name, original_name, popularity, profile_path
-*/
 
       let actorMovies = [];
       let currentActorMovies = "";
 
-      for (let i = 0; i < actors.length; i++) {
+      for (let i = 0; i < actors.length; i++) {      
         currentActorMovies = actors[i].known_for
-        actorMovies.push(...currentActorMovies)      }
-      console.log(actorMovies);
+        actorMovies.push(...currentActorMovies)    
+        console.log(actorMovies);  
+         
+      }
+
+      for (let i = 0; i < actors.length; i++) { 
+        if(actors.profile_path !== null && typeof actorMovies[i].poster_path != "object" ) {
+            actors[i].profile_path = "https://image.tmdb.org/t/p/w200" + actors[i].profile_path
+        } else {
+            actors[i].profile_path = "notFound"
+        }
+      }
+
+      for (let i = 0; i < actorMovies.length; i++) {
+        if (actorMovies[i].poster_path !== null && typeof actorMovies[i].poster_path != "object" ) {
+            actorMovies[i].poster_path = "https://image.tmdb.org/t/p/w200" + actorMovies[i].poster_path
+            console.log(actorMovies[i].poster_path);
+        } else {
+            actorMovies[i].poster_path = "notFound"
+        }
+      }
+
       return ( 
             <div className="row" id="ActorSearch">
+            <SearchForm />
+            
+            {searchTerm !== null && <h2>Actors</h2> }
                 {actors.map((actor, i) => (
+                    searchTerm !== null &&
                         <ActorCard
                             key={actor.id}
                             name={actor.name}
-                            profile_path={"https://image.tmdb.org/t/p/w200" + actor.profile_path}
+                            profile_path={actor.profile_path}
                             value={i}
                         /> 
                     ))}
+            
+            {searchTerm !== null && <h2>Movies</h2> }
                 {actorMovies.map((film, i) => (
+                    searchTerm !== null &&
                     <ActorMovieCard
                         key={film.id}
                         id={film.id}
                         title={film.title}
-                        poster_path={"https://image.tmdb.org/t/p/w200" + film.poster_path}
+                        poster_path={film.poster_path}
                         value={film.id}
                     /> 
                 ))}
