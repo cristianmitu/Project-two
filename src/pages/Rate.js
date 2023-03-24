@@ -1,9 +1,7 @@
-<<<<<<< HEAD
+
 import React, { useState} from "react"
-=======
 import axios from "axios";
 import React, { useState, useEffect} from "react"
->>>>>>> ab7e08533250b2cff2a6e2fc3d8edfe280de28ec
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
